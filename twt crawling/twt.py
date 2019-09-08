@@ -5,12 +5,6 @@ Created on Tue Sep  3 16:43:22 2019
 @author: huiyeon
 
 """
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Sep  8 16:10:42 2019
-
-@author: huiyeon
-"""
 
 # import packages
 import time
