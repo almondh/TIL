@@ -27,3 +27,9 @@
 SMAPE.PNG
 
 *  n은 모든 예측 개수(세대수*39개)입니다.
+
+
+ - File
+     1 EP demand prediction_1  :  NA 중 중앙값보다 큰 값들 평균으로 처리, 나머지 최빈값으로 처리 도중 중단
+     2 Ep demand prediction_2  :  보간법 2가지로 NA 처리
+     3 Ep demand prediction_3  :  ML로 예측해보기
