@@ -7,6 +7,12 @@
 ##### jupyter notebook이 열리지 않는다면, https://nbviewer.jupyter.org/ 에 접속해서 해당 주소를 입력하거나, 다운받아주세요. 
 
 
+##### - File
+     1. EP demand prediction_1  :  NA 중 중앙값보다 큰 값들 평균으로 처리, 나머지 최빈값으로 처리 도중 중단
+     2. Ep demand prediction_2  :  보간법 2가지로 NA 처리
+     3. Ep demand prediction_3  :  ML로 예측해보기
+
+
 ### 문제
      본 대회에서는, 기존 전력 사용 기록과 기상 데이터 등 공공 데이터를 이용하여, 
      각 가정 및 회사의 시간별, 일별, 월별 전력 사용량을 예측합니다. 
@@ -27,9 +33,3 @@
 SMAPE.PNG
 
 *  n은 모든 예측 개수(세대수*39개)입니다.
-
-
-##### - File
-     1. EP demand prediction_1  :  NA 중 중앙값보다 큰 값들 평균으로 처리, 나머지 최빈값으로 처리 도중 중단
-     2. Ep demand prediction_2  :  보간법 2가지로 NA 처리
-     3. Ep demand prediction_3  :  ML로 예측해보기
