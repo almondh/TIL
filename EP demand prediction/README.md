@@ -12,6 +12,12 @@
      2. Ep demand prediction_2  :  보간법 2가지로 NA 처리
      3. Ep demand prediction_3  :  ML로 예측해보기
 
+##### - 참조 사이트
+     1. https://otexts.com/fppkr/complexseasonality.html
+     2. 
+
+
+
 
 ### 문제
      본 대회에서는, 기존 전력 사용 기록과 기상 데이터 등 공공 데이터를 이용하여, 
