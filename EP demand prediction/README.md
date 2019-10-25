@@ -11,7 +11,8 @@
      1. EP demand prediction_1.ipynb  :  NA 중 중앙값보다 큰 값들 평균으로 처리, 나머지 최빈값으로 처리 도중 중단
      2. Ep demand prediction_2.ipynb  :  보간법 2가지로 기상데이터 NA 처리
      3. Ep demand prediction_3.ipynb  :  ML로 예측해보기
-     4. weather_pre.r                 :  knn으로 기상데이터 NA 처리
+     4. KNN imputation.r              :  knn으로 기상데이터 NA 처리
+     5. MICE imputation.r             :  MICE로 원데이터 NA 처리
 ##### - 참조 사이트
      1. https://otexts.com/fppkr/complexseasonality.html
      2. https://medium.com/open-machine-learning-course/open-machine-learning-course-topic-9-time-series-analysis-in-python-a270cb05e0b3
