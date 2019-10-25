@@ -16,7 +16,7 @@
 ##### - 참조 사이트
      1. https://otexts.com/fppkr/complexseasonality.html
      2. https://medium.com/open-machine-learning-course/open-machine-learning-course-topic-9-time-series-analysis-in-python-a270cb05e0b3
-
+     3. https://rstudio-pubs-static.s3.amazonaws.com/192402_012091b9adac42dbbd22c4d07cb00d36.html
 
 
 
