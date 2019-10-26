@@ -14,6 +14,8 @@
      4. KNN imputation.r                     :  knn으로 기상데이터 NA 처리
      5. MICE imputation.r                    :  MICE로 원데이터 NA 처리
      6. houly data to daily,month data.ipynb :  시간별 데이터를  일별, 월별로 변경
+     7. interpolation_1 imputation.py        :  test 데이터에 보간법 method 1으로 첫 NA들 이후 NA 
+     
 ##### - 참조 사이트
      1. https://otexts.com/fppkr/complexseasonality.html
      2. https://medium.com/open-machine-learning-course/open-machine-learning-course-topic-9-time-series-analysis-in-python-a270cb05e0b3
