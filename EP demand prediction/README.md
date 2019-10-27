@@ -16,6 +16,7 @@
      6. houly data to daily,month data.ipynb :  시간별 데이터를  일별, 월별로 변경
      7. interpolation_1 imputation.py        :  test 데이터에 보간법 method 1으로 첫 NA들 이후 NA 
      9. LSTM_test_x7.py                      :  test['X7']에 대한 LSTM
+     10. DACON_ARIMA.ipynb                   :  colab으로 ARIMA
      
 ##### - 참조 사이트
      1. https://otexts.com/fppkr/complexseasonality.html
