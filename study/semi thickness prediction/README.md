@@ -9,9 +9,11 @@
 - 평가함수 : MAE
 
 ##### - File
-     1. keras_5.py            
+     1. keras_4.py            
           (1) 출력층 softplus보다 linear 함수 성능 우세
           (2) 은닉층 relu보다 softplus 함수 성능 우세
           (3) 은닉층 4개 사용하는것이 속도, 효율측면에서 우세
           (4) dropout 추가 -> 성능 우세
           (5) lr = 0.01 사용 -> 성능 우세
+     2. keras_4.h5
+          : keras_4.py를 활용하여 학습시킨 모델
