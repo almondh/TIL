@@ -24,6 +24,7 @@
 - 넷플릭스/아마존과 비교했을 때 유튜브는 지속적으로 **추천의 신선함을 요구** -> 짧은 수명 주기
 
 
+
 ### 2. System Design
 - 전반적인 추천시스템은 위의 목표/과제에 의거
 - 추천이 합리적, 최신, 신선함, 사용자의 최근 행동과의 관련, 사용자가 이 비디오가 왜 추천되었는지 이해하는 것이 중요
@@ -44,3 +45,7 @@
 
 #### 2.2 Related data
 - 추천시스템의 구성요소 중 하나는 비디오 ![equation](https://latex.codecogs.com/png.latex?%5Cinline%20%5Cdpi%7B100%7D%20vi)에서 유사하거나 관련있는 비디오 ![equation](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20Ri) 에 대해 mapping을 구성하는 것
+
+
+
+- ![equation](https://latex.codecogs.com/png.latex?%5Cinline%20%5Cdpi%7B150%7D%20r%28v_%7Bi%7D%2C%20v_%7Bj%7D%29%20%3D%20%5Cfrac%7Bc_%7Bij%7D%7D%7Bf%28v_%7Bi%7D%2C%20v_%7Bj%7D%29%7D)
