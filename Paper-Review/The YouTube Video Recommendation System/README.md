@@ -44,7 +44,7 @@
 - 특히, 암시적 활동 데이터는 비동기적으로 생성되며 불완전할 수 있음
 
 #### 2.2 Related data
-- 추천시스템의 구성요소 중 하나는 비디오 ![equation](https://latex.codecogs.com/png.latex?%5Cinline%20%5Cdpi%7B100%7D%20vi)에서 유사하거나 관련있는 비디오 ![equation](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20Ri) 에 대해 mapping을 구성하는 것
+- 추천시스템의 구성요소 중 하나는 비디오 vi에서 유사하거나 관련있는 비디오 Ri에 대해 mapping을 구성하는 것
 - 사용자가 주어진 비디오 v를 본 후에 볼 수 있는 유사비디오를 정의 
 - 매핑 계산을 위해서 association rule mining(1) 또는 co-visitation counts 기술 사용
 - 사용자 시청 기록의 세션을 고려하여, 주어진 시간(일반적으로 24시간)동안, 각 비디오 쌍(vi,vj)이 얼마나 자주 세션 내에서 함께 보였는지를 계산
@@ -54,3 +54,18 @@
 - ![equation](https://latex.codecogs.com/png.latex?%5Cinline%20%5Cdpi%7B150%7D%20r%28v_%7Bi%7D%2C%20v_%7Bj%7D%29%20%3D%20%5Cfrac%7Bc_%7Bij%7D%7D%7Bf%28v_%7Bi%7D%2C%20v_%7Bj%7D%29%7D)
   - ci, cj : 각각의 vi, vj의 모든 세션에서 발생하는 총 발생 횟수
   - f(vi, vj) : 시드 비디오와 후보 비디오의 글로벌 인기도를 모두 고려한 정규화 함수
+  - ci는 모든 후보관련 동영상에 대해 동일하고, 세팅 내에서 무시될 수 있기 때문에 글로벌 인기도에 대해서만 정규화 시킴
+
+- 이후 vi에 대한 관련 영상 set을 점수 r(vi, vj)로 선정된 상위 N개의 후보 영상들을 선정(최소 점수 상한값 또한 부과)
+- 위와 같은 방식으로는 신뢰할 수 없는 관련영상을 계산할 수 없는 영상 : 전체 조회수가 너무 낮은 영상들
+  - 해결해야 할 문제 : presentation bias, noisy watch data, etc
+  - 전체 조회수 대신 사용할 수 있는 소스들 : 순서, 시청기록의 타임스탬프, 비디오의 메타데이터, etc
+  
+#### 2.3 Generating Recommendation Candidates
+- 개인화된 추천 계산을 위해 연관비디오 연결 규칙과 유저의 개인활동을 결합
+  - 시청한 영상(잠재적으로 특정 임계값 초과할 수 있음), 명시적으로 선호된 영상(좋아요, 순위권영상, 플레이리스트에 추가된 영상) 포함 가능
+  - 이 비디오들의 결합을 seed set라고 부름
+- 주어진 seed set S에 대한 후보영상추천을 얻기 위해서 관련 영상 그래프의 모서리를 따라서 확장
+  - seed set내의 각각의 vi에 대해 연관영상 Ri를 고려
+  - 이러한 관련 비디오 세트의 조합을 C1로 표기
+- ![equation](https://latex.codecogs.com/png.latex?%5Cinline%20%5Cdpi%7B150%7D%20C1%28S%29%20%3D%5Cbigcup%20_%7Bvi%5Cin%20S%7D%20Ri)
