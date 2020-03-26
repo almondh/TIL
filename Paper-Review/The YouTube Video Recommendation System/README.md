@@ -76,4 +76,25 @@
 - 추천 범위를 넓히기 위해, 관련 영상 그래프에 대해 제한된 타동적 폐쇄(limited transitive closure)를 통해 후보 set 확대
 - Cn : seed set의 영상에서 n의 거리 내에 도달할 수 있는 영상 set으로 정의
 - ![equation](https://latex.codecogs.com/gif.latex?%5Cinline%20C_%7Bn%7D%28S%29%20%3D%5Cbigcup%20_%7Bvi%5Cin%20C_%7Bn-1%7D%7D%20Ri)
+  - C0 = S 는 재귀함수의 기본케이스(이 경우 C1에 대해 (2)와 동일한 정의)
+  
+- 최종 후보 set Cfinal 의 추천은 다음으로 정의
+- ![equation](https://latex.codecogs.com/gif.latex?%5Cinline%20C_%7Bfinal%7D%28S%29%20%3D%28%5Cbigcup%20_%7Bvi%5Cin%20S%7D%5E%7BN%7D%20Ci%29%20%5Csetminus%20S)
+  - 관련 영상 그래프의 높은 분기 계수(?high branching factor) 때문에, 작은 seed set을 가진 사용자에게도 광범위하고 넓은 추천을 제공함
+  - 후보 set의 각각의 영상은 seed set의 하나 이상의 영상과 연관되어 있음
+  - 사용자에게 추천의 이유를 제공하고 순위 결정을 위해 연관후보 seed를 추적?
 
+#### 2.4 Ranking
+- 단계별로 후보 영상을 만든 후 signal을 사용하여 점수로 순위를 매김
+- signal 종류
+  1. 영상 품질(Video quality) : 사용자와 관계없이 영상이 인식될 가능성을 판단하기위해 사용
+    - 조회수, 시청률, 댓글, 선호도, 공유활동, 업로드 시간
+  2. 사용자 특이성(User specificity) : 사용자 취향/선호도와 일치하는 영상 활성화를 위해 사용
+    - 시청 기록(history), 조회수, 영상 시청 시간
+  3. 다양화(Diversification)
+ 
+- 1, 2의 선형조합을 통해 후보 영상 순위 목록 생성
+- 4~60개 사이만 표시 -> 카테고리 전반에 걸쳐서 관련성/다양성 사이의 균형 최적화
+- 단일 seed 영상과 관련된 권장 사항의 수에 제약 or 같은 채널의 권장 사항 수를 제한 or 주제 클러스터링 or 내용분석
+
+#### 2.5 User Interface
