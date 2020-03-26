@@ -51,5 +51,6 @@
 <br>
 
 - cij에 의한 공동방문수를 나타내면서 각 비디오의 관련성 점수를 다음과 같이 정의
-- ![equation](https://latex.codecogs.com/png.latex?%5Cinline%20%5Cdpi%7B150%7D%20r%28v_%7Bi%7D%2C%20v_%7Bj%7D%29%20%3D%20%5Cfrac%7Bc_%7Bij%7D%7D%7Bf%28v_%7Bi%7D%2C%20v_%7Bj%7D%29%7D) (1)
-  - 
+- ![equation](https://latex.codecogs.com/png.latex?%5Cinline%20%5Cdpi%7B150%7D%20r%28v_%7Bi%7D%2C%20v_%7Bj%7D%29%20%3D%20%5Cfrac%7Bc_%7Bij%7D%7D%7Bf%28v_%7Bi%7D%2C%20v_%7Bj%7D%29%7D)
+  - ci, cj : 각각의 vi, vj의 모든 세션에서 발생하는 총 발생 횟수
+  - f(vi, vj) : 시드 비디오와 후보 비디오의 글로벌 인기도를 모두 고려한 정규화 함수
