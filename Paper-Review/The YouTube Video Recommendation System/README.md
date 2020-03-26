@@ -68,12 +68,12 @@
 - 주어진 seed set S에 대한 후보영상추천을 얻기 위해서 관련 영상 그래프의 모서리를 따라서 확장
   - seed set내의 각각의 vi에 대해 연관영상 Ri를 고려
   - 이러한 관련 비디오 세트의 조합을 C1로 표기
-- ![equation](https://latex.codecogs.com/png.latex?%5Cinline%20%5Cdpi%7B150%7D%20C_%7B1%7D%28S%29%20%3D%5Cbigcup%20_%7Bvi%5Cin%20S%7D%20Ri)
+- ![equation](https://latex.codecogs.com/gif.latex?%5Cinline%20C_%7B1%7D%28S%29%20%3D%5Cbigcup%20_%7Bvi%5Cin%20S%7D%20Ri)
   - 대부분의 경우에는 C1이 크고 다양한 영상후보를 생성하기에 충분
     - 실제 모든 영상에 대한 관련영상은 상당히 좁고, seed 영상과 매우 유사함 
     - 좁은 추천으로 이어져 관심사에 가까운 콘텐츠 추천은 가능하지만, 새로운 동엿앙을 추천하는데는 실패.
 
 - 추천 범위를 넓히기 위해, 관련 영상 그래프에 대해 제한된 타동적 폐쇄(limited transitive closure)를 통해 후보 set 확대
 - Cn : seed set의 영상에서 n의 거리 내에 도달할 수 있는 영상 set으로 정의
-- ![equation](https://latex.codecogs.com/png.latex?%5Cinline%20%5Cdpi%7B150%7D%20C_%7Bn%7D%28S%29%20%3D%5Cbigcup%20_%7Bvi%5Cin%20C_%7Bn-1%7D%7D%20Ri)
+- ![equation](https://latex.codecogs.com/gif.latex?%5Cinline%20C_%7Bn%7D%28S%29%20%3D%5Cbigcup%20_%7Bvi%5Cin%20C_%7Bn-1%7D%7D%20Ri)
 
