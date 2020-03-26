@@ -1,4 +1,5 @@
 # The YouTube Video Recommendation System
+2010-09-26
 
 ### Abstract
 - 유저들에게 유저 활동을 바탕으로 개인화된 비디오를 추천
@@ -145,5 +146,7 @@
     - 21일간 CTR을 측정한 결과, 전반적으로 공동방문기간의 추천성능이 전체기간동안 평균적으로 가장 많이 본 페이지의 207%에서 수행됨
     - 반면, 최고 선호도/등급은 유사한 수준 또는 가장 많이 본 기준선 이하에서 수행.
     - 3주동안 상대적 CTR 변화
+    <img width="595" alt="Figure_2" src="https://user-images.githubusercontent.com/50644641/77655959-8a1b5700-6fb6-11ea-8ae5-0761002ac9aa.png">
     
-    
+ 
+ 
