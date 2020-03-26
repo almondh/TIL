@@ -45,7 +45,8 @@
 
 #### 2.2 Related data
 - 추천시스템의 구성요소 중 하나는 비디오 ![equation](https://latex.codecogs.com/png.latex?%5Cinline%20%5Cdpi%7B100%7D%20vi)에서 유사하거나 관련있는 비디오 ![equation](https://latex.codecogs.com/png.latex?%5Cdpi%7B100%7D%20Ri) 에 대해 mapping을 구성하는 것
-
-
-
-- ![equation](https://latex.codecogs.com/png.latex?%5Cinline%20%5Cdpi%7B150%7D%20r%28v_%7Bi%7D%2C%20v_%7Bj%7D%29%20%3D%20%5Cfrac%7Bc_%7Bij%7D%7D%7Bf%28v_%7Bi%7D%2C%20v_%7Bj%7D%29%7D)
+- 사용자가 주어진 비디오 v를 본 후에 볼 수 있는 유사비디오를 정의 
+- 매핑 계산을 위해서 association rule mining[1] 또는 co-visitation counts 기술 사용
+- 사이트 내에서 사용자 시청 활동에대해 
+- ![equation](https://latex.codecogs.com/png.latex?%5Cinline%20%5Cdpi%7B150%7D%20r%28v_%7Bi%7D%2C%20v_%7Bj%7D%29%20%3D%20%5Cfrac%7Bc_%7Bij%7D%7D%7Bf%28v_%7Bi%7D%2C%20v_%7Bj%7D%29%7D) [1]
+  - 
