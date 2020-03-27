@@ -53,6 +53,7 @@
 - 영상 길이와 사용자 참여 수준은 모두 signal 품질에 영향을 미침
 - 특히, 암시적 활동 데이터는 비동기적으로 생성되며 불완전할 수 있음
 
+
 #### 2.2 Related data
 - 추천시스템의 구성요소 중 하나는 비디오 vi에서 유사하거나 관련있는 비디오 Ri에 대해 mapping을 구성하는 것
 - 사용자가 주어진 비디오 v를 본 후에 볼 수 있는 유사비디오를 정의 
@@ -64,12 +65,13 @@
 - ![equation](https://latex.codecogs.com/png.latex?%5Cinline%20%5Cdpi%7B150%7D%20r%28v_%7Bi%7D%2C%20v_%7Bj%7D%29%20%3D%20%5Cfrac%7Bc_%7Bij%7D%7D%7Bf%28v_%7Bi%7D%2C%20v_%7Bj%7D%29%7D)
   - ci, cj : 각각의 vi, vj의 모든 세션에서 발생하는 총 발생 횟수
   - f(vi, vj) : 시드 비디오와 후보 비디오의 글로벌 인기도를 모두 고려한 정규화 함수
-  - ci는 모든 후보관련 동영상에 대해 동일하고, 세팅 내에서 무시될 수 있기 때문에 글로벌 인기도에 대해서만 정규화 시킴
+  - (간단하게는 ci * cj) -> ci는 모든 후보관련 동영상에 대해 동일하고, 세팅 내에서 무시될 수 있기 때문에 글로벌 인기도에 대해서만 정규화 시킴
 
 - 이후 vi에 대한 관련 영상 set을 점수 r(vi, vj)로 선정된 상위 N개의 후보 영상들을 선정(최소 점수 상한값 또한 부과)
 - 위와 같은 방식으로는 신뢰할 수 없는 관련영상을 계산할 수 없는 영상 : 전체 조회수가 너무 낮은 영상들
   - 해결해야 할 문제 : presentation bias, noisy watch data, etc
   - 전체 조회수 대신 사용할 수 있는 소스들 : 순서, 시청기록의 타임스탬프, 비디오의 메타데이터, etc
+  
   
 #### 2.3 Generating Recommendation Candidates
 - 개인화된 추천 계산을 위해 연관비디오 연결 규칙과 유저의 개인활동을 결합
@@ -81,14 +83,16 @@
 - ![equation](https://latex.codecogs.com/gif.latex?%5Cinline%20C_%7B1%7D%28S%29%20%3D%5Cbigcup%20_%7Bvi%5Cin%20S%7D%20Ri)
   - 대부분의 경우에는 C1이 크고 다양한 영상후보를 생성하기에 충분
     - 실제 모든 영상에 대한 관련영상은 상당히 좁고, seed 영상과 매우 유사함 
-    - 좁은 추천으로 이어져 관심사에 가까운 콘텐츠 추천은 가능하지만, 새로운 동엿앙을 추천하는데는 실패.
+    - 좁은 추천으로 이어져 관심사에 가까운 콘텐츠 추천은 가능하지만, 새로운 영상을 추천하는데는 실패.
+
 
 - 추천 범위를 넓히기 위해, 관련 영상 그래프에 대해 제한된 타동적 폐쇄(limited transitive closure)를 통해 후보 set 확대
 - Cn : seed set의 영상에서 n의 거리 내에 도달할 수 있는 영상 set으로 정의
 - ![equation](https://latex.codecogs.com/gif.latex?%5Cinline%20C_%7Bn%7D%28S%29%20%3D%5Cbigcup%20_%7Bvi%5Cin%20C_%7Bn-1%7D%7D%20Ri)
   - C0 = S 는 재귀함수의 기본케이스(이 경우 C1에 대해 (2)와 동일한 정의)
   
-- 최종 후보 set Cfinal 의 추천은 다음으로 정의
+  
+- 최종 후보 set Cfinal 의 추천은 다음으로 정의(Cn에서 C1을 제외)
 - ![equation](https://latex.codecogs.com/gif.latex?%5Cinline%20C_%7Bfinal%7D%28S%29%20%3D%28%5Cbigcup%20_%7Bvi%5Cin%20S%7D%5E%7BN%7D%20Ci%29%20%5Csetminus%20S)
   - 관련 영상 그래프의 높은 분기 계수(?high branching factor) 때문에, 작은 seed set을 가진 사용자에게도 광범위하고 넓은 추천을 제공함
   - 후보 set의 각각의 영상은 seed set의 하나 이상의 영상과 연관되어 있음
@@ -101,7 +105,7 @@
     - 조회수, 시청률, 댓글, 선호도, 공유활동, 업로드 시간
   2. 사용자 특이성(User specificity) : 사용자 취향/선호도와 일치하는 영상 활성화를 위해 사용
     - 시청 기록(history), 조회수, 영상 시청 시간
-  3. 다양화(Diversification)
+  3. 다양화(Diversification) : 같은채널의 영상이 여러번 추천되지 않도록 하기위해 사용
  
 - 1, 2의 선형조합을 통해 후보 영상 순위 목록 생성
 - 4~60개 사이만 표시 -> 카테고리 전반에 걸쳐서 관련성/다양성 사이의 균형 최적화
