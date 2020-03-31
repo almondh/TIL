@@ -1,1 +1,2 @@
-L point 데이터로 EDA , try clustering
+# L point 빅데이터 경진대회
+EDA , try clustering
